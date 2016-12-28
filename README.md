@@ -1,2 +1,2 @@
 # CS-Discount
-Front-End Discount Interface
+Quick Front-End Discount Interface
