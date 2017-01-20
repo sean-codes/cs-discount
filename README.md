@@ -7,17 +7,6 @@ Dynamically building conditions
 
 ![Alt text](https://raw.githubusercontent.com/sean-codes/cs-discount/master/img/conditions.gif)
 
-Select List Options
-
-A List of options:
-
-    optionName: {
-        options: {
-            label: 'string',
-            value: 'is optional'
-        }
-    }
-
 HTML for inline inputs
 
     //class: inlineInput to get initialized
@@ -38,3 +27,32 @@ HTML for nests (combinations)
             <li class="addButtonLi">${conditions.addButtonHTML}</li>
         </ul>
     </div>
+
+Data Structure for options:
+
+    optionName: {
+        options: {
+            label: 'string',
+            value: 'is optional'
+        }
+    }
+    
+Data Structure for nests:
+
+    conditions.nests = {
+	    nestName: {
+		    label: 'Condition Combination',
+		    options: 'combination, productCombination, cart',
+		    priority: 1,
+		    list: {
+  			    main: {
+	  			    label: 'Condition Combination',
+	  			    html: `
+	  				    <div data-nest='main' class='nest'>If <a name='aggregator' class='inlineInput' data-input="select" data-optiongroup="aggregator">ALL</a> of these conditions are <a name='value' class='inlineInput' data-input="select" data-optiongroup="boolean">TRUE</a>
+						    <ul>
+							    <li class="addButtonLi">${conditions.addButtonHTML}</li>
+						    </ul>
+					    </div>`
+			    }
+		    }
+	    }
