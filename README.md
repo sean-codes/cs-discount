@@ -6,3 +6,12 @@ Front-End Discount Interface
 Dynamically building conditions
 
 ![Alt text](https://raw.githubusercontent.com/sean-codes/cs-discount/master/img/conditions.gif)
+
+Select List Options
+
+    optionName: {
+        options: {
+            label: 'string',
+            value: 'is optional'
+        }
+    }
