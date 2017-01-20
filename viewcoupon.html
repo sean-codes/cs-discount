@@ -1,0 +1,90 @@
+<cfsetting showdebugoutput='no'>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <!-- The Styles -->
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='css/style.css' rel='stylesheet'>
+</head>
+<body style="padding-top: 70px;">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="navbar-brand">Discount Builder</span>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a id="goBack"><span class="glyphicon glyphicon glyphicon-chevron-left"></span> Go Back</a></li>
+                <li><a id="couponSave"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a></li>
+                <li><a id="couponSaveContinue"><span class="glyphicon glyphicon-save-file"></span> Save and continue</a></li>
+                <li><a id="couponDelete"><span class="glyphicon glyphicon-trash"></span> Delete</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Rule Information</h2><hr>
+        <form>
+            <div class="form-group">
+                <label>Rule Name</label>
+                <input type="text" class="form-control" name="ruleInfoName">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="form-control" name="ruleInfoDescription">
+            </div>
+            <div class="form-group">
+              <label>Code</label>
+                <input type="text" class="form-control" name="ruleInfoCode">
+            </div>
+            <div class="form-group">
+              <label>Is Active</label><br>
+                <label class="radio-inline">
+                    <input type="radio" name="ruleInfoIsActive" value="1"> True
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="ruleInfoIsActive" value="0"> False
+                </label>
+            </div>
+            <div class="form-group">
+              <label>Uses per Customer</label>
+                <input type="text" class="form-control" name="ruleInfoUsesPerCustomer">
+            </div>
+            <div class="form-group">
+              <label>From Date</label>
+                <input type="date" class="form-control" name="ruleInfoFromDate">
+            </div>
+            <div class="form-group">
+                <label>To Date</label>
+                <input type="date" class="form-control" name="ruleInfoToDate">
+            </div>
+        </form>
+
+        <h2>Conditions</h2>
+        <label>Apply the rule only to cart items matching the following conditions (leave blank for all items).</label><hr>
+        <div id="conditionContainer"></div>
+
+        <h2>Actions</h2><hr>
+        <form>
+            <div class="form-group">
+                <label>Apply to</label>
+                <select class="form-control" name="ruleActionsApply">
+                    <option value="percent">Percent of product price discount</option>
+                    <option value="dollar">Fixed amount discount</option>
+                    <option value="shipping">Shipping Discount</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Discount Amount</label>
+                <input type="text" class="form-control" name="ruleActionsDiscountAmount">
+            </div>
+        </form>
+    </div>
+
+    <!-- The Javascript -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <script src='js/viewcoupon.js'></script>
+    <script src='js/viewcoupon_conditions_setup.js'></script>
+    <script src='js/viewcoupon_conditions.js'></script>
+</body>
+</html>
